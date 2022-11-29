@@ -1,4 +1,4 @@
-# `MacWall` |
+# `MacWall`
 The (in progress) open source animated background software designed for macOS.
 
 ### `About`
