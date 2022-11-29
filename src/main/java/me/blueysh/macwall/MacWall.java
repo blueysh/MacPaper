@@ -152,12 +152,3 @@ class MacWallActionListener {
         };
     }
 }
-
-class MacWallResourceGetter {
-    public MacWallResourceGetter() {
-
-    }
-    public URL getIconPath() {
-        return this.getClass().getResource("desktop_mac_.png");
-    }
-}
