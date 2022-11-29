@@ -23,7 +23,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>me.blueysh.macwall.MacWall</mainClass>
+                            <mainClass>me.blueysh.macpaper.MacPaper</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
