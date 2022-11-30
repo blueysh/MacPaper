@@ -37,9 +37,9 @@ public class MacPaper {
     }
 
     private static void run() throws UnsupportedOperatingSystemException {
-        MacPaperOptions.saveDefault();
         if (Files.exists(appFolder)) {
             if (!Files.exists(appFolder.resolve("data"))) try {
+                MacPaperOptions.saveDefault();
                 Files.createDirectory(appFolder.resolve("data"));
             } catch (IOException ex) {
                 logger.warning("Failed to create data directory!");
@@ -110,6 +110,11 @@ public class MacPaper {
             try {
                 Files.createDirectory(appFolder);
                 Files.createDirectory(appFolder.resolve("data"));
+                MacPaperOptions.saveDefault();
+
+                Runtime.getRuntime().exec(new String[]{"/usr/bin/open",appFolder.resolve("data").toString()});
+                JOptionPane.showMessageDialog(new Frame(), "This is the MacPaper app data folder. Place your 'background.gif' here, then relaunch MacPaper.");
+                System.exit(0);
 
                 logger.info("App data folder created!");
             } catch (IOException ex) {

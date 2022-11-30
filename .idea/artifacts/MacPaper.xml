@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="jpackage" name="MacPaper">
+    <output-path>$PROJECT_DIR$/out/artifacts/MacPaper</output-path>
+    <properties id="jpackage-properties">
+      <options>
+        <option name="version" value="1.0" />
+        <option name="copyright" value="Blueysh" />
+        <option name="description" value="" />
+        <option name="vendor" value="" />
+        <option name="mainClass" value="me.blueysh.macpaper.MacPaper" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="MacWall.jar">
+        <element id="module-output" name="MacPaper" />
+      </element>
+    </root>
+  </artifact>
+</component>

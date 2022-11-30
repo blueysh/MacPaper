@@ -18,9 +18,10 @@ import java.util.*;
 
 public class FrameCacher {
     File backgroundFile;
-    MacPaperOptions options = new MacPaperOptions();
+    MacPaperOptions options;
 
     public FrameCacher(File backgroundFile) {
+        options = new MacPaperOptions();
         MacPaper.logger.info("GIF file found as " + backgroundFile.getAbsolutePath() + ".");
         this.backgroundFile = backgroundFile;
         if (!MacPaper.pargs.contains("no-caching")) {
@@ -33,12 +34,12 @@ public class FrameCacher {
             } catch (IOException e) {
                 MacPaper.logger.warning("Failed to reset frame cache!");
                 e.printStackTrace();
-                JOptionPane.showMessageDialog(new Frame(), "Failed to reset frame cache. Exiting.", "MacWall Error", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(new Frame(), "Failed to reset frame cache. Exiting.", "MacPaper Error", JOptionPane.PLAIN_MESSAGE);
                 System.exit(-1);
             }
         }
         MacPaper.logger.info("Caching frames from " + backgroundFile.getName() + "..");
-        JOptionPane.showMessageDialog(new Frame(), "MacWall needs to load your background before running. This may take a while.\nA dialog will be shown when MacWall is active. Press OK to start loading.", "MacWall", JOptionPane.PLAIN_MESSAGE);
+        JOptionPane.showMessageDialog(new Frame(), "MacPaper needs to load your background before running. This may take a while.\nA dialog will be shown when MacPaper is active. Press OK to start loading.", "MacPaper", JOptionPane.PLAIN_MESSAGE);
         if (!MacPaper.pargs.contains("no-caching")) cacheFrames();
     }
 
@@ -63,7 +64,7 @@ public class FrameCacher {
             bar.setName("Loading");
             bar.setStringPainted(true);
 
-            JFrame fr = new JFrame("MacWall");
+            JFrame fr = new JFrame("MacPaper");
             fr.setResizable(false);
             fr.setContentPane(bar);
             fr.pack();

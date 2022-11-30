@@ -24,11 +24,12 @@ public class MacPaperOptions {
             reader.close();
         } catch (IOException ex) {
             MacPaper.logger.warning("Failed to read from the options file!");
-            JOptionPane.showMessageDialog(new Frame(), "Failed to read from the options file! Exiting.", "MacWall Error", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(new Frame(), "Failed to read from the options file! Exiting.", "MacPaper Error", JOptionPane.PLAIN_MESSAGE);
+            ex.printStackTrace();
             System.exit(-1);
         } catch (NumberFormatException ex) {
             MacPaper.logger.warning("Malformed options file!");
-            JOptionPane.showMessageDialog(new Frame(), "Invalid number entered for a field! Exiting.", "MacWall Error", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(new Frame(), "Invalid number entered for a field! Exiting.", "MacPaper Error", JOptionPane.PLAIN_MESSAGE);
             System.exit(-1);
         }
     }
@@ -50,7 +51,7 @@ public class MacPaperOptions {
             }
         } catch (IOException e) {
             MacPaper.logger.warning("Failed to write default options.txt!");
-            JOptionPane.showMessageDialog(new Frame(), "Failed to write default options.txt file to app folder! Exiting.", "MacWall Error", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(new Frame(), "Failed to write default options.txt file to app folder! Exiting.", "MacPaper Error", JOptionPane.PLAIN_MESSAGE);
             e.printStackTrace();
             System.exit(-1);
         }
