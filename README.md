@@ -1,4 +1,4 @@
-# `MacPaper`
+# `MacPaper` | [`DOWNLOAD`](https://github.com/blueysh/macpaper/releases)
 The open source animated background software designed for macOS.
 
 ### `About`
