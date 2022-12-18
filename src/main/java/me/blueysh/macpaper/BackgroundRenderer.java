@@ -74,8 +74,10 @@ public class BackgroundRenderer {
 
         String[] as = {
                 "osascript",
-                "-e", "tell application \"Finder\"",
-                "-e", "set desktop picture to POSIX file \"" + frame.getAbsolutePath() + "\"",
+                "-e", "tell application \"System Events\"",
+                "-e", "tell every desktop",
+                "-e", "set picture to \"" + frame.getAbsolutePath() + "\"",
+                "-e", "end tell",
                 "-e", "end tell"
         };
 
